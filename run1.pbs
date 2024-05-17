@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=Test
+#SBATCH --time=0:05:00
+#SBATCH --ntasks-per-node=1
+#SBATCH --partition batch
+
+module load intel/mpi4
+mpirun -r ssh ./Test /home/2021-03959/matrices/matrix1/matrix1_100 /home/2021-03959/matrices/matrix2/matrix2_100 /home/2021-03959/results/res_100.txt home/2021-03959/stats/stat100.txt
+mpirun -r ssh ./Test /home/2021-03959/matrices/matrix1/matrix1_200 /home/2021-03959/matrices/matrix2/matrix2_200 /home/2021-03959/results/res_200.txt home/2021-03959/stats/stat200.txt
+mpirun -r ssh ./Test /home/2021-03959/matrices/matrix1/matrix1_500 /home/2021-03959/matrices/matrix2/matrix2_500 /home/2021-03959/results/res_500.txt home/2021-03959/stats/stat500.txt
+mpirun -r ssh ./Test /home/2021-03959/matrices/matrix1/matrix1_1000 /home/2021-03959/matrices/matrix2/matrix2_1000 /home/2021-03959/results/res_1000.txt home/2021-03959/stats/stat1000.txt
+mpirun -r ssh ./Test /home/2021-03959/matrices/matrix1/matrix1_1500 /home/2021-03959/matrices/matrix2/matrix2_1500 /home/2021-03959/results/res_1500.txt home/2021-03959/stats/stat1500.txt
+mpirun -r ssh ./Test /home/2021-03959/matrices/matrix1/matrix1_2000 /home/2021-03959/matrices/matrix2/matrix2_2000 /home/2021-03959/results/res_2000.txt home/2021-03959/stats/stat2000.txt
+mpirun -r ssh ./Test /home/2021-03959/matrices/matrix1/matrix1_3000 /home/2021-03959/matrices/matrix2/matrix2_3000 /home/2021-03959/results/res_3000.txt home/2021-03959/stats/stat3000.txt
